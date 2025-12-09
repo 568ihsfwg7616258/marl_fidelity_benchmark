@@ -1,0 +1,14 @@
+torch>=2.0
+gymnasium
+pettingzoo[all]
+shimmy
+stable-baselines3
+ray[rllib]
+scikit-learn
+shap
+captum
+matplotlib
+seaborn
+pandas
+numpy
+tqdm
