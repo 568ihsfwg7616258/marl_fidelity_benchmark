@@ -1,4 +1,4 @@
-# src/evaluation/fidelity_metrics.py
+# src/evaluation
 import numpy as np
 from scipy.stats import spearmanr
 
@@ -6,7 +6,7 @@ def measure_fidelity(gt, xai):
     gt = np.array(gt)
     xai = np.array(xai)
     
-    # نرمال‌سازی
+# normalize    
     gt = gt / (np.linalg.norm(gt) + 1e-8)
     xai = xai / (np.linalg.norm(xai) + 1e-8)
     

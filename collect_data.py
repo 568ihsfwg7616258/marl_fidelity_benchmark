@@ -11,7 +11,7 @@ def collect_data(episodes=800):
     observations = []
     actions = []
     
-    print("جمع‌آوری داده شروع شد...")
+    print("Data collection started...")
     for ep in range(episodes):
         env.reset()
         for agent in env.agent_iter():
@@ -28,16 +28,16 @@ def collect_data(episodes=800):
             env.step(action)
         
         if (ep+1) % 100 == 0:
-            print(f"اپیزود {ep+1}/{episodes} تموم شد")
+            print(f"Episode {ep+1}/{episodes} finished")
     
-    # ذخیره داده
+    #save data
     os.makedirs("data", exist_ok=True)
     with open("data/observations.pkl", "wb") as f:
         pickle.dump(observations, f)
     with open("data/actions.pkl", "wb") as f:
         pickle.dump(actions, f)
     
-    print(f"داده جمع شد! تعداد نمونه: {len(observations)}")
+    print(f"Data collected! Number of samples: {len(observations)}")
 
 if __name__ == "__main__":
-    collect_data(episodes=800)  # حدود ۸–۱۲ دقیقه طول می‌کشه
+    collect_data(episodes=800)  # Collect data from 800 episodes
